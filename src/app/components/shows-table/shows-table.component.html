@@ -1,0 +1,13 @@
+<table class="table mx-auto">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titre</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr app-shows-table-line *ngFor="let show of shows" [show]="show"></tr>
+  </tbody>
+</table>

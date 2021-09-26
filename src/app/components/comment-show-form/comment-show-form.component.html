@@ -1,0 +1,26 @@
+<div class="row col-6 card shadow mx-auto mt-3">
+
+  <h3 class="text-center">{{title}}</h3>
+
+  <form [formGroup]="commentShowForm" (ngSubmit)="onSubmitShowForm()" class="my-3">
+    <div class="mb-3">
+      <label for="author">Qui êtes-vous?</label>
+      <input id="author" class="form-control" placeholder="Indiquez votre Nom / Pseudo" formControlName="author"
+        [(ngModel)]="commentShow.author">
+      <app-errors-form [control]="this.commentShowForm.controls.author" controlLabel="auteur"></app-errors-form>
+    </div>
+
+    <div class="mb-3">
+      <label for="content">Qu'avez vous à dire?</label>
+      <textarea id="content" class="form-control" placeholder="Laissez votre avis ici" formControlName="content"
+        [(ngModel)]="commentShow.content"></textarea>
+      <app-errors-form [control]="this.commentShowForm.controls.content" controlLabel="contenu"></app-errors-form>
+    </div>
+
+    <button type="submit" class="d-grid col-4 mx-auto btn btn-outline-dark"
+      [disabled]="commentShowForm.invalid">{{submitLabel}}</button>
+
+  </form>
+
+
+</div>

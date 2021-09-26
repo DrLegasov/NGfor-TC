@@ -1,0 +1,8 @@
+<div class="container my-4 d-flex justify-content-end">
+  <ng-container *ngIf="isConnected && !isAddPage">
+    <a class="btn btn-success mx-2 my-4" routerLink="/shows/new">AJOUTER UNE SÉRIE</a>
+  </ng-container>
+  <ng-container *ngIf="isConnected">
+    <a class="btn btn-outline-danger mx-2 my-4" (click)="onClickSignOut()">DÉCONNEXION</a>
+  </ng-container>
+</div>
